@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -46,5 +48,22 @@ public class StudentService {
         */
         }
         return studentDTOList;
+    }
+
+
+    public StudentDTO findById(Long id) {
+        Optional<StudentEntity> optionalStudentEntity = studentRepository.findById(id);
+        if(optionalStudentEntity.isPresent()) {
+            // 있다
+            StudentEntity studentEntity = optionalStudentEntity.get();
+            return StudentDTO.toSaveDTO(studentEntity);
+        } else {
+            // 없다
+            return null;
+        }
+
+        // 고급버전
+//        studentRepository.findById(id).orElseThrow(() -> new NoSuchElementException()); // 예외처리
+//        return StudentDTO.toSaveDTO(studentEntity);
     }
 }

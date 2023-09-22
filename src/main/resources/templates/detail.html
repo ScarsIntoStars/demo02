@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>id</td>
+        <td th:text="${student.id}">
+    </tr>
+    <tr>
+        <td>학번</td>
+        <td th:text="${student.studentNumber}">
+    <tr>
+        <td>이름</td>
+        <td th:text="${student.studentName}">
+    </tr>
+    <tr>
+        <td>전공</td>
+        <td th:text="${student.studentMajor}">
+    </tr>
+    <tr>
+        <td>전화번호</td>
+        <td th:text="${student.studentMobile}">
+    </tr>
+</table>
+</body>
+</html>
