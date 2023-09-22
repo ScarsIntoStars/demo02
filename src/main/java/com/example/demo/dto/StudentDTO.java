@@ -22,4 +22,6 @@ public class StudentDTO {
         studentDTO.setStudentMajor(studentEntity.getStudentMajor());
         return studentDTO;
     }
+
+
 }

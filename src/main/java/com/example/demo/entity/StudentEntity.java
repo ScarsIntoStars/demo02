@@ -44,4 +44,16 @@ public class StudentEntity {
         return studentEntity;
     }
 
+    public static StudentEntity toUpdateEntity(StudentDTO studentDTO) {
+        System.out.println("studentDTO : " + studentDTO);
+        StudentEntity studentEntity = new StudentEntity();
+        studentEntity.setId(studentDTO.getId());
+        studentEntity.setStudentNumber(studentDTO.getStudentNumber());
+        studentEntity.setStudentName(studentDTO.getStudentName());
+        studentEntity.setStudentMobile(studentDTO.getStudentMobile());
+        studentEntity.setStudentMajor(studentDTO.getStudentMajor());
+        return studentEntity;
+    }
+
+
 }
